@@ -1,0 +1,1 @@
+# mini-photobooth-for-warehouses
