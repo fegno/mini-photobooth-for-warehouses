@@ -124,9 +124,9 @@ MEDIA_URL = '/src/'
 STATIC_URL = '/assets/'
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'public/media/')
-STATIC_ROOT = os.path.join(BASE_DIR, 'public/static/')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'public/assets/')]
+MEDIA_ROOT = os.path.join(str(BASE_DIR), 'public/media/')
+STATIC_ROOT = os.path.join(str(BASE_DIR), 'public/static/')
+STATICFILES_DIRS = [os.path.join(str(BASE_DIR), 'public/assets/')]
 
 INTERNAL_IPS = ['localhost', '127.0.0.1']
 
