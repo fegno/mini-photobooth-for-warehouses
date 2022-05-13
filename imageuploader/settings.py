@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-82e2o2%msc1a9viqksp$b2v%a*nk$v332!za6=@k@0xh#n1g9f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['prodshot.dev.fegno.com', 'localhost']
 
 
 # Application definition
@@ -119,7 +119,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
+
+MEDIA_URL = '/src/'
+STATIC_URL = '/assets/'
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'public/media/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'public/static/')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'public/assets/')]
+
+INTERNAL_IPS = ['localhost', '127.0.0.1']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
